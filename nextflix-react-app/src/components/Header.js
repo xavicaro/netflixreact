@@ -3,29 +3,8 @@ import { AppBar, Toolbar, Box, Avatar, IconButton } from '@mui/material';
 import logo from '../images/netflix-logo.png';
 import { useNavigate } from 'react-router';
 
-const headerStyles = {
-  backgroundColor: "#111",
-  top: 0,
-  left: 0,
-  right: 0,
-  height: '64px',
-  margin:"0"
-};
 
-const logoStyles = {
-  width: "100px",
-  cursor: "pointer",
-};
 
-const transparentHeaderStyles = {
-  backgroundColor: 'transparent',
-};
-
-const toolbarStyles = {
-  display: 'flex',
-  justifyContent: "space-between",
-  alignItems: "center"
-};
 
 const Header = () => {
 
@@ -48,15 +27,38 @@ const Header = () => {
     };
   }, []);
 
+  const styles = {
+    headerStyles: {
+      backgroundColor: "#111",
+      top: 0,
+      left: 0,
+      right: 0,
+      height: '64px',
+      margin:"0"
+    },
+    logoStyles: {
+      width: "100px",
+      cursor: "pointer",
+    },
+    transparentHeaderStyles: {
+      backgroundColor: 'transparent',
+    },
+    toolbarStyles: {
+      display: 'flex',
+      justifyContent: "space-between",
+      alignItems: "center"
+    }
+  }
+
   return (
     <AppBar
       position="sticky"
       elevation={0}
-      sx={show ? transparentHeaderStyles : headerStyles}
+      sx={show ? styles.transparentHeaderStyles : styles.headerStyles}
     >
-      <Toolbar sx={toolbarStyles}>
+      <Toolbar sx={styles.toolbarStyles}>
         <IconButton onClick={() => navigate('/')}>
-          <Box component="img" src={logo} alt="logo" sx={logoStyles} />
+          <Box component="img" src={logo} alt="logo" sx={styles.logoStyles} />
         </IconButton>
         <Avatar 
         variant="square" 

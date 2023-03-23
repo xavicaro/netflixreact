@@ -1,19 +1,11 @@
-import { makeStyles } from '@mui/styles';
 import React from 'react'
 
-const Plans = () => {
-    const classes = useStyles();
+const Plans = ({cost, children}) => {
   return (
     <div>
-      plans
+      {children}
     </div>
   )
 }
-
-const useStyles = makeStyles((theme) => ({
-    root:{
-      
-    },
-  }));
 
 export default Plans

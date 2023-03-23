@@ -58,3 +58,5 @@ npm i styled-components
 -Hemos creado un botón con styled components y le hemos llamado NetflixButton. Esté boton está totalmente customizado y podremos variar su longitu, color y otros estilos, pasándole props.
 
 -Styled components para variar los estilos del input o del botón, pero para su posicionamiento, le damos una clase normal
+
+-Hemos creado un input personalizado en Style components. Le hemos llamdo NetflixInput, como un InputBase era ya un componente de material ui, lo hemos llamado styled(InputBase). Si fuera un input de base usariamos styled.input

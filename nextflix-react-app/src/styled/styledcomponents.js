@@ -2,7 +2,12 @@ import styled from "styled-components";
 import { InputBase } from "@mui/material";
 
 export const NetflixInput = styled(InputBase)`
-
+zIndex:30;
+background: #fff;
+padding:25.5px;
+height:30px;
+border-radius:5px;
+border:none;
 `
 
 export const NetflixButton = styled.button`

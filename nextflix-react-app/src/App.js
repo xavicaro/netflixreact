@@ -1,32 +1,36 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-//import { Counter } from './features/counter/Counter';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React from 'react';
-import Login from "./Pages/Login";
-import Home from "./Pages/Home";
-import Paypal from "./Pages/Paypal";
-import Profile from "./Pages/Profile";
+import Login from './Pages/Login';
+import Home from './Pages/Home';
+import Paypal from './Pages/Paypal';
+import Profile from './Pages/Profile';
 import { Box } from '@mui/material';
+import { createStyles, makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles(() =>
+  createStyles({
+    appStyles: {
+      minHeight: '100vh',
+    },
+  })
+);
 
 function App() {
-  const user = null;
-  
-  const appStyles = {
-    minHeight: "100vh",
-    // backgroundColor:"#111"
-  };
+  const user = "pepe";
+  const classes = useStyles();
 
   return (
-    <Box sx={appStyles}>
+    <Box className={classes.appStyles}>
       <Router>
-        {
-          !user ? (<Login />) : (
-            <Routes>
-              <Route path='/profile' element={<Profile />} />
-              <Route path='/checkout' element={<Paypal />} />
-              <Route path='/' element={<Home />} />
-            </Routes>
-          )
-        }
+        {!user ? (
+          <Login />
+        ) : (
+          <Routes>
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/checkout" element={<Paypal />} />
+            <Route path="/" element={<Home />} />
+          </Routes>
+        )}
       </Router>
     </Box>
   );
