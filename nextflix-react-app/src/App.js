@@ -1,18 +1,22 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Counter } from './features/counter/Counter';
+//import { Counter } from './features/counter/Counter';
 import React from 'react';
-import { makeStyles } from '@mui/styles';
 import Login from "./Pages/Login";
 import Home from "./Pages/Home";
 import Paypal from "./Pages/Paypal";
 import Profile from "./Pages/Profile";
+import { Box } from '@mui/material';
 
 function App() {
+  const user = null;
+  
+  const appStyles = {
+    minHeight: "100vh",
+    // backgroundColor:"#111"
+  };
 
-  const user = "Pepe";
-  const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <Box sx={appStyles}>
       <Router>
         {
           !user ? (<Login />) : (
@@ -24,15 +28,8 @@ function App() {
           )
         }
       </Router>
-    </div>
+    </Box>
   );
 }
-
-const useStyles = makeStyles((theme) => ({
-  root:{
-    minHeight: "100vh",
-    backgroundColor: "#111",
-  },
-}));
 
 export default App;

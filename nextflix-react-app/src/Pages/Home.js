@@ -1,6 +1,7 @@
 import { makeStyles } from '@mui/styles';
 import React from 'react'
 import Header from '../components/Header';
+import Banner from "../components/Banner";
 
 const Home = () => {
     const classes = useStyles();
@@ -8,6 +9,7 @@ const Home = () => {
     return(
         <div>
             <Header/>
+            <Banner/>
         </div>
     )
 }
