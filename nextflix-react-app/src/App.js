@@ -11,6 +11,7 @@ const useStyles = makeStyles(() =>
   createStyles({
     appStyles: {
       minHeight: '100vh',
+      backgroundColor:"#111",
     },
   })
 );
